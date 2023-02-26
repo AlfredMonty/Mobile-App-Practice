@@ -8,7 +8,8 @@ using UnityEngine.Audio;
 public class Logic : MonoBehaviour
 {
     public int playerScore;
-    public AudioSource scoreAudio; 
+    public AudioSource scoreAudio;
+    public Scene scene; 
     public Text scoreText;
     public GameObject gameOverScreen;
     public BirdScript birdScript; 
@@ -27,7 +28,8 @@ public class Logic : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(1);
     }
 
     public void GameOver()
