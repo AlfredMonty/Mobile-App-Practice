@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using UnityEngine.Audio; 
+using UnityEngine.Audio;
 
 public class Logic : MonoBehaviour
 {
     public int playerScore;
+    public int playerHighscore;
     public AudioSource scoreAudio;
     public Scene scene; 
     public Text scoreText;
+    public Text highscoreText;
     public GameObject gameOverScreen;
-    public BirdScript birdScript; 
+    public BirdScript birdScript;
 
     [ContextMenu("Increase Score")]
     public void AddScore(int scoreToAdd)
@@ -34,6 +36,35 @@ public class Logic : MonoBehaviour
 
     public void GameOver()
     {
-        gameOverScreen.SetActive(true); 
+        gameOverScreen.SetActive(true);
+    }
+
+    private void Start()
+    {
+        Load();
+    }
+
+    public void Update()
+    {
+        scoreText.text = playerScore.ToString();
+        highscoreText.text = playerHighscore.ToString();
+
+        if (playerScore > playerHighscore)
+        {
+            playerHighscore = playerScore;
+            Save();
+        }
+    }
+
+    public void Save()
+    {
+        PlayerPrefs.SetInt("score", playerScore);
+        PlayerPrefs.SetInt("highscore", playerHighscore);
+    }
+    public void Load()
+    {
+        //playerScore = PlayerPrefs.GetInt("score");
+        playerHighscore = PlayerPrefs.GetInt("highscore");
     }
 }
+
