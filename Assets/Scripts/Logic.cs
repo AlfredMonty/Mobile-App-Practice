@@ -76,5 +76,11 @@ public class Logic : MonoBehaviour
         //playerScore = PlayerPrefs.GetInt("score");
         playerHighscore = PlayerPrefs.GetInt("highscore");
     }
+
+    public void EndApplication()
+    {
+        PlayerPrefs.DeleteAll();
+        Application.Quit();
+    }
 }
 

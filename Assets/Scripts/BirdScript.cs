@@ -22,14 +22,17 @@ public class BirdScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && birdAlive) {
             rb.velocity = Vector2.up * jumpHeight;
         }
+        if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began && birdAlive)
+        {
+            rb.velocity = Vector2.up * jumpHeight;
+        }
         if (Input.GetKeyDown(KeyCode.Delete) && !birdAlive)
         {
             PlayerPrefs.DeleteAll();
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            PlayerPrefs.DeleteAll();
-            Application.Quit();
+            logic.EndApplication();
         }
 
         //Deadzone for bird Method 1
