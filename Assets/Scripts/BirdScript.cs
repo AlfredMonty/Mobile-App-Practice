@@ -28,6 +28,7 @@ public class BirdScript : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            PlayerPrefs.DeleteAll();
             Application.Quit();
         }
 

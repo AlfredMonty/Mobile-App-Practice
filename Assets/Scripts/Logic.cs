@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 
@@ -11,8 +12,10 @@ public class Logic : MonoBehaviour
     public int playerHighscore;
     public AudioSource scoreAudio;
     public Scene scene; 
-    public Text scoreText;
-    public Text highscoreText;
+    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI highscoreText;
+    //public Text scoreText;
+    //public Text highscoreText;
     public GameObject gameOverScreen;
     public BirdScript birdScript;
 
@@ -46,8 +49,15 @@ public class Logic : MonoBehaviour
 
     public void Update()
     {
-        scoreText.text = playerScore.ToString();
-        highscoreText.text = playerHighscore.ToString();
+        if (scoreText == null || highscoreText == null)
+        {
+            return; 
+        }
+        else
+        {
+            scoreText.text = playerScore.ToString();
+            highscoreText.text = playerHighscore.ToString();
+        }
 
         if (playerScore > playerHighscore)
         {
