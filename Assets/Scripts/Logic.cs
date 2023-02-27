@@ -14,9 +14,8 @@ public class Logic : MonoBehaviour
     public Scene scene; 
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI highscoreText;
-    //public Text scoreText;
-    //public Text highscoreText;
     public GameObject gameOverScreen;
+    public GameObject endApp;
     public BirdScript birdScript;
 
     [ContextMenu("Increase Score")]
@@ -40,6 +39,7 @@ public class Logic : MonoBehaviour
     public void GameOver()
     {
         gameOverScreen.SetActive(true);
+        endApp.SetActive(true);
     }
 
     private void Start()

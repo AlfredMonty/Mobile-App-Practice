@@ -12,7 +12,6 @@ public class BirdScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //gameObject.name = "Greg"; 
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<Logic>();
     }
 
