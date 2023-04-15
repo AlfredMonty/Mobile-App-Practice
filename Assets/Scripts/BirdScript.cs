@@ -39,9 +39,9 @@ public class BirdScript : MonoBehaviour
             }
             else
             {
-                logic.EndApplication();
+                logic.OnApplicationQuit();
             }
-            logic.EndApplication();
+            logic.OnApplicationQuit();
         }
 
         //Deadzone for bird Method 1
