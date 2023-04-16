@@ -5,8 +5,11 @@ using UnityEngine;
 public class BirdScript : MonoBehaviour
 {
     public Rigidbody2D rb;
+
     public float jumpHeight = 0;
+
     public Logic logic;
+
     public bool birdAlive = true; 
 
     // Start is called before the first frame update
@@ -18,6 +21,7 @@ public class BirdScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Bird Controls.
         if (Input.GetKeyDown(KeyCode.Space) && birdAlive) {
             rb.velocity = Vector2.up * jumpHeight;
         }
@@ -29,6 +33,7 @@ public class BirdScript : MonoBehaviour
         {
             PlayerPrefs.DeleteAll();
         }
+        //End app. 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             //For Android; Take out for Windows build.  

@@ -9,6 +9,7 @@ public class PipeMove : MonoBehaviour
 
     void Update()
     {
+        //Move pipes towards player and destroy pipes when out of bounds. 
         transform.position = transform.position + (Vector3.left * moveSpeed * Time.deltaTime);
 
         if (transform.position.x < deadZone)

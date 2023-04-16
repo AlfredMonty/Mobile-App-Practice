@@ -10,15 +10,21 @@ public class Logic : MonoBehaviour
 {
     public int playerScore;
     public int playerHighscore;
+
     public AudioSource scoreAudio;
+
     public Scene scene; 
+
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI highscoreText;
+
     public GameObject gameOverScreen;
     public GameObject endApp;
+
     public BirdScript birdScript;
 
     [ContextMenu("Increase Score")]
+    //Add to score. 
     public void AddScore(int scoreToAdd)
     {
         if (birdScript.birdAlive == true)

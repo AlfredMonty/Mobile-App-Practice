@@ -9,6 +9,7 @@ using UnityEngine;
 public class BirdDeadzone : MonoBehaviour
 {
     public Logic logic;
+
     public BirdScript birdScript; 
 
     void Start()
@@ -16,6 +17,7 @@ public class BirdDeadzone : MonoBehaviour
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<Logic>();
     }
 
+    //Bird death. 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 3)
