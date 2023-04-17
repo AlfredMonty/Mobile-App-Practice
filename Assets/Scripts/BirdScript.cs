@@ -24,6 +24,8 @@ public class BirdScript : MonoBehaviour
         //Bird Controls.
         if (Input.GetKeyDown(KeyCode.Space) && birdAlive) {
             rb.velocity = Vector2.up * jumpHeight;
+            logic.scoreAudio.clip = logic.jump;
+            GetComponent<AudioSource>().PlayOneShot(logic.jump, 1);
         }
         if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began && birdAlive)
         {

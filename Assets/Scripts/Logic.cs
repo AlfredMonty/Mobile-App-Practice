@@ -12,6 +12,8 @@ public class Logic : MonoBehaviour
     public int playerHighscore;
 
     public AudioSource scoreAudio;
+    public AudioClip jump; 
+    public AudioClip score;
 
     public Scene scene; 
 
@@ -31,8 +33,7 @@ public class Logic : MonoBehaviour
         {
             playerScore += 1;
             scoreText.text = playerScore.ToString();
-            Debug.Log("Played Audio!");
-            scoreAudio.Play();
+            GetComponent<AudioSource>().PlayOneShot(score, 1);
         }
     }
 
