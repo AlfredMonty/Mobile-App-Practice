@@ -30,13 +30,13 @@ public class OptionsMenu : MonoBehaviour
 
     public void ResolutionChange()
     {
-        if (resolutionDropdown.value == 0) { Screen.SetResolution(640, 360, FullScreenMode.FullScreenWindow, frameRate); }
-        else if (resolutionDropdown.value == 1) { Screen.SetResolution(854, 480, FullScreenMode.FullScreenWindow, frameRate); }
-        else if (resolutionDropdown.value == 2) { Screen.SetResolution(1280, 720, FullScreenMode.FullScreenWindow, frameRate); }
-        else if (resolutionDropdown.value == 3) { Screen.SetResolution(1920, 1080, FullScreenMode.FullScreenWindow, frameRate); }
-        else if (resolutionDropdown.value == 4) { Screen.SetResolution(2560, 1440, FullScreenMode.FullScreenWindow, frameRate); }
-        else if (resolutionDropdown.value == 5) { Screen.SetResolution(3840, 2160, FullScreenMode.FullScreenWindow, frameRate); }
-
+        if (resolutionDropdown.value == 0) {Screen.SetResolution(640, 360, FullScreenMode.FullScreenWindow, frameRate); }
+        else if (resolutionDropdown.value == 1) {Screen.SetResolution(854, 480, FullScreenMode.FullScreenWindow, frameRate); }
+        else if (resolutionDropdown.value == 2) {Screen.SetResolution(1280, 720, FullScreenMode.FullScreenWindow, frameRate); }
+        else if (resolutionDropdown.value == 3) {Screen.SetResolution(1920, 1080, FullScreenMode.FullScreenWindow, frameRate); }
+        else if (resolutionDropdown.value == 4) {Screen.SetResolution(2560, 1440, FullScreenMode.FullScreenWindow, frameRate); }
+        else if (resolutionDropdown.value == 5) {Screen.SetResolution(3840, 2160, FullScreenMode.FullScreenWindow, frameRate); }
+        else {Screen.SetResolution(640, 360, FullScreenMode.FullScreenWindow, frameRate);}
     }
 
 }
